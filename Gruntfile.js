@@ -1,13 +1,15 @@
+/* global module:true */
 module.exports = function(grunt){
   grunt.initConfig({
-    less: {
-      compile: {
-        files: {'dist/compiled.css':'css/*.less'}
-      }
+    eslint:{
+      options:{
+        htmlhintrc:'./.eslintrc'
+      },
+      target:['*.js']
     }
+
   });
+  grunt.loadNpmTasks('grunt-eslint');
 
-  grunt.loadNpmTasks('grunt-contrib-less');
-
-  grunt.registerTask('default',['less:compile']);
+  grunt.registerTask('default',['eslint']);
 }
