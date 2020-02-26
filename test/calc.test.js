@@ -8,5 +8,9 @@ describe('加法函数的单元测试',function(){
 
   it('3 + 5 = 8',function(){
     expect(add(3,5)).to.be.equal(8);
-  })
+  });
+
+  it('a + b = NaN',function(){
+    expect(isNaN(add('a','b'))).to.be.ok;
+  });
 })
