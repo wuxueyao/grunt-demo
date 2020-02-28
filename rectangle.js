@@ -13,10 +13,11 @@ $(function(){
     var w = Number($width.val()),
         h = Number($height.val());
     //calculate
-    var p = 2 * (w + h),
-        a = w * h;
+   /* var p = 2 * (w + h),
+        a = w * h;*/
+    var rect = rectangle();
     //output
-    $perimeter.val(p);
-    $area.val(a);
+    $perimeter.val(rect.perimeter(w,h));
+    $area.val(rect.area(w,h));
   });
 })
