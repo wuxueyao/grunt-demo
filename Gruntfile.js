@@ -1,16 +1,18 @@
 /* global module:true */
 module.exports = function(grunt){
-  grunt.initConfig({
-    htmlmin:{
-      options:{
+    grunt.initConfig({
+        imagemin:{
+            files:{
+                expand: true,
+                src:['images/*.{png,jpg,gif}'],
+                dest:'dist/'
+            }
+        }
+    });
 
-      },
-    files:{
-      src:'./index.html',
-      dest:'dist/index.html'
-    }
-    }
-  });
-  grunt.loadNpmTasks('grunt-mocha-cli');
-  grunt.registerTask('default',['run','mocha','stop']);
-}
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
+
+    grunt.registerTask('default',['imagemin'])
+} 
+
+
