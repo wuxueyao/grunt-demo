@@ -13,7 +13,10 @@ module.exports = function(grunt){
 
     grunt.loadNpmTasks('grunt-spritesmith');
 
-    grunt.registerTask('default',['sprite'])
+    //自定义构建任务：
+    grunt.registerTask('build','buld task',function(){
+      console.log('build task')
+    })
 } 
 
 
